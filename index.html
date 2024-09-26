@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <<title>Cuaderno de Diseño - Andrés Fábregas - Electrónica III</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1 class="glitch" data-text="Cuaderno de Diseño">Cuaderno de Diseño</h1>
+            <h2 class="neon">Electrónica III - Andrés Fábregas</h2>
+        </header>
+
+        <nav class="circuit-nav">
+            <ul>
+                <li><a href="#reunion">Reunión</a></li>
+                <li><a href="#requisitos">Requisitos</a></li>
+                <li><a href="#diseno">Diseño</a></li>
+                <li><a href="#simulaciones">Simulaciones</a></li>
+            </ul>
+        </nav>
+
+        <section id="reunion" class="section">
+            <h2 class="led-text">1. Primera Reunión</h2>
+            <ul class="data-list">
+                <li><span class="highlight">Nombre del equipo:</span> ALFA</li>
+                <li><span class="highlight">Mi rol:</span> Archivist (Pero dispuesto a asumir otras responsabilidades)</li>
+                <li><span class="highlight">Solución:</span> Sensado de temperatura con paneles solares (usando OP AMP)</li>
+            </ul>
+            <h3 class="subheader">Lluvia de ideas</h3>
+            <figure class="image-container">
+                <img src="ideaslluvia.jpeg" alt="Lluvia de ideas" class="image-half hover-zoom">
+                <figcaption>Figura 1: Lluvia de ideas inicial del proyecto</figcaption>
+            </figure>
+            <p class="description">La sesión de lluvia de ideas resultó en una dirección clara para nuestro proyecto, enfocándonos en la medición de temperatura utilizando tecnología solar y amplificadores operacionales.</p>
+        </section>
+
+        <section id="requisitos" class="section">
+            <h2 class="led-text">2. Requisitos del Proyecto</h2>
+            <ul class="data-list">
+                <li>Medición de temperatura precisa (dos decimales) y realista.</li>
+                <li>Sistema resistente a factores ambientales (Calor y lluvia).</li>
+                <li>Visualización de temperatura en LCD.</li>
+            </ul>
+            <p class="description">Estos requisitos guiarán nuestro diseño, asegurando un producto final robusto y funcional.</p>
+        </section>
+
+        <section id="diseno" class="section">
+            <h2 class="led-text">3. Diseño del Sistema</h2>
+            <p class="description">Para integrar el OP AMP en nuestro sistema, desarrollamos un diagrama de bloques que ilustra el flujo de señal y procesamiento:</p>
+            <figure class="image-container">
+                <img src="diagramabloks.PNG" alt="Diagrama de bloques del sistema" class="image-full hover-zoom">
+                <figcaption>Figura 2: Diagrama de bloques del sistema de sensado de temperatura</figcaption>
+            </figure>
+            <p class="description">El amplificador operacional juega un papel crucial en la amplificación y acondicionamiento de la señal del sensor de temperatura, mejorando la precisión de nuestras mediciones.</p>
+        </section>
+
+        <section id="simulaciones" class="section">
+            <h2 class="led-text">4. Simulaciones y Pruebas</h2>
+            <div class="subsection">
+                <h3 class="subheader">4.1 Espejo de Corriente</h3>
+                <p class="description">Iniciamos con la simulación de un espejo de corriente, un componente fundamental en nuestro diseño:</p>
+                <figure class="image-container">
+                    <img src="ltspice1.PNG" alt="Simulación LTspice del espejo de corriente" class="image-full hover-zoom">
+                    <figcaption>Figura 3: Simulación LTspice del espejo de corriente</figcaption>
+                </figure>
+                <figure class="image-container">
+                    <img src="eskemamirrocurrent.PNG" alt="Esquema del espejo de corriente" class="image-full hover-zoom">
+                    <figcaption>Figura 4: Esquema detallado del espejo de corriente</figcaption>
+                </figure>
+            </div>
+
+            <div class="subsection">
+                <h3 class="subheader">4.2 Simulación OTA</h3>
+                <p class="description">Basándonos en el espejo de corriente, procedimos a la simulación del Amplificador de Transconductancia (OTA):</p>
+                <figure class="image-container">
+                    <img src="OTA.PNG" alt="Simulación OTA" class="image-full hover-zoom">
+                    <figcaption>Figura 5: Simulación del Amplificador de Transconductancia (OTA)</figcaption>
+                </figure>
+                <p class="description">Consideraciones importantes para el OTA:</p>
+                <figure class="image-container">
+                    <img src="ota2.PNG" alt="Consideraciones OTA" class="image-half hover-zoom">
+                    <figcaption>Figura 6: Parámetros clave del OTA</figcaption>
+                </figure>
+            </div>
+
+            <div class="subsection">
+                <h3 class="subheader">4.3 Montaje y Pruebas</h3>
+                <p class="description">Durante el montaje inicial, observamos un desfase en la señal:</p>
+                <div class="image-row">
+                    <figure class="image-container">
+                        <img src="a2.jpeg" alt="Prueba con desfase 1" class="image-three-quarters hover-zoom">
+                        <figcaption>Figura 7: Prueba inicial mostrando desfase</figcaption>
+                    </figure>
+                    <figure class="image-container">
+                        <img src="a1.jpeg" alt="Prueba con desfase 2" class="image-full hover-zoom">
+                        <figcaption>Figura 8: Segunda prueba confirmando el desfase</figcaption>
+                    </figure>
+                </div>
+            </div>
+
+            <div class="subsection">
+                <h3 class="subheader">4.4 Detección y Resolución de Problemas</h3>
+                <p class="description">Al rearmar el circuito, identificamos y reemplazamos componentes dañados:</p>
+                <div class="image-row">
+                    <figure class="image-container">
+                        <img src="d1.jpeg" alt="Transistores quemados" class="image-full hover-zoom">
+                        <figcaption>Figura 9: Transistores dañados identificados</figcaption>
+                    </figure>
+                    <figure class="image-container">
+                        <img src="c1.jpeg" alt="Circuito rearmado 1" class="image-full hover-zoom">
+                        <figcaption>Figura 10: Proceso de rearmado del circuito</figcaption>
+                    </figure>
+                </div>
+                <figure class="image-container">
+                    <img src="b1.jpeg" alt="Circuito rearmado 2" class="image-full hover-zoom">
+                    <figcaption>Figura 11: Circuito completamente rearmado y listo para pruebas</figcaption>
+                </figure>
+            </div>
+
+            <div class="subsection">
+                <h3 class="subheader">4.5 Resultado Final</h3>
+                <p class="description">Tras resolver los problemas de simulación y hardware, logramos una ganancia estable de 2 en la salida:</p>
+                <div class="image-row">
+                    <figure class="image-container">
+                        <img src="333.jpeg" alt="Resultado final 1" class="image-full hover-zoom">
+                        <figcaption>Figura 12: Medición final mostrando ganancia estable</figcaption>
+                    </figure>
+                    <figure class="image-container">
+                        <img src="we.jpeg" alt="Resultado final 2" class="image-full hover-zoom">
+                        <figcaption>Figura 13: Confirmación de la ganancia en segunda medición</figcaption>
+                    </figure>
+                </div>
+            </div>
+        </section>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
