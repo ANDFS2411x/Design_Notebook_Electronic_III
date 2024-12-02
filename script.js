@@ -87,3 +87,4 @@
 
             // Initial setup
             updateCarousel();
+         });
